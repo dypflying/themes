@@ -1657,6 +1657,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                         <td style="text-align: center;">
                             <input type="checkbox" class="grid-row-checkbox"
                                    data-id="{{(index $info $PrimaryKey).Content}}"
+                                   data-state="{{(index $info "state").Value}}"
                                    style="position: absolute; opacity: 0;">
                         </td>
                     {{end}}
