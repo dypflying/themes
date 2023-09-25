@@ -1527,7 +1527,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     </div>
     <span>
         {{if or .DeleteUrl .ExportUrl}}
-            <div class="btn-group">
+            <div class="btn-group" id="batch-action" >
                 <a class="btn btn-sm btn-default">{{lang "Action"}}</a>
                 <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown">
                 <span class="caret"></span>
