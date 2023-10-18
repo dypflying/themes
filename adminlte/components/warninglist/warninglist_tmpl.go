@@ -7,7 +7,7 @@ var List = map[string]string{
     <li class="item">       
         <div style="padding-left:10px;">
             <i class="fa {{index $data "icon"}}" style="color:{{index $data "iconcolor"}};"></i> 
-            <a href="javascript:void(0)" class="product-title">
+            <a href="{{index $data "link"}}" class="product-title">
                 {{index $data "title"}}
                 <span class="label label-{{index $data "labeltype"}} pull-right">
                     {{index $data "count"}}
