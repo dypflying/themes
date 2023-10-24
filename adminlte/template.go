@@ -1611,18 +1611,30 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
         {{if eq .Type "data-table"}}
             <tr>
                 {{if eq .IsTab false}}
-                    <th style="text-align: center;">
+                    <th style="text-align: center;width:50px;">
                         <input type="checkbox" class="grid-select-all" style="position: absolute; opacity: 0;">
                     </th>
                 {{end}}
                 {{range $key, $head := .Thead}}
                     {{if eq $head.Hide false}}
                         {{if eq $head.Width "0px"}}
-                            <th>
+                            {{if eq $head.TextAlign ""}}
+                                <th>
+                            {{else}}
+                                <th style="text-align: {{$head.TextAlign}};">
+                            {{end}}
                         {{else if eq $head.Width ""}}
-                            <th>
+                            {{if eq $head.TextAlign ""}}
+                                <th>
+                            {{else}}
+                                <th style="text-align: {{$head.TextAlign}};">
+                            {{end}}
                         {{else}}
-                            <th style="width: {{$head.Width}}">
+                            {{if eq $head.TextAlign ""}}
+                                <th style="width: {{$head.Width}}">
+                            {{else}}   
+                                <th style="width: {{$head.Width}}; text-align: {{$head.TextAlign}};">
+                            {{end}}
                         {{end}}
                         {{$head.Head}}
                         {{if $head.Sortable}}
@@ -1633,7 +1645,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                     {{end}}
                 {{end}}
                 {{if eq .NoAction false}}
-                    <th style="text-align: center;">{{lang "operation"}}</th>
+                    <th style="text-align: center;right:0;width:80px;">{{lang "operation"}}</th>
                 {{end}}
             </tr>
         {{end}}
@@ -2717,12 +2729,12 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
 {{end}}`, "footer": `{{define "footer"}}
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> {{.System.Version}}
+            <b>Version</b> 0.0.1
         </div>
-        <div class="pull-right hidden-xs">
+       <!-- <div class="pull-right hidden-xs">
             <b>Theme</b> {{.System.Theme}}&nbsp;&nbsp;
-        </div>
-        <strong>Powered by <a href="https://github.com/GoAdminGroup/go-admin">GoAdmin</a>.</strong>
+        </div> -->
+        <strong>Powered by <a href="https://hyperstack.io/">HyperStack</a>.</strong>
         {{.FooterInfo}}
     </footer>
 {{end}}`, "head": `{{define "head"}}
