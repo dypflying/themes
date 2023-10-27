@@ -526,7 +526,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
 {{end}}`, "components/form/number": `{{define "form_number"}}
     {{if .Editable}}
         <div class="input-group">
-            <input {{if .Must}}required="1"{{end}} style="width: 100px; text-align: center;" type="text"
+            <input {{if .Must}}required="1"{{end}} style="text-align: center;" type="text"
                    name="{{.Field}}"
                    value="{{.Value}}" class="form-control {{.Field}}"
                    placeholder="{{.Head}}">
@@ -742,7 +742,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
   <thead>
     <tr>
         {{range $key, $item := .TableFields }}
-            <th>{{$item.Head}}</th>
+            <th style="width:{{$item.Width}}px;">{{$item.Head}}</th>
         {{end}}
         <th style="width: 75px;"></th>
     </tr>
@@ -751,7 +751,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     {{range $k, $v := (index .TableFields 0).ValueArr}}
       <tr>
           {{range $key, $item := $.TableFields }}
-              <td>
+              <td style="width:{{$item.Width}}px;">
                   <div class="form-group" style="margin-bottom: 0px;">
                     <div class="col-sm-12">
                         {{template "form_components" (changeValue $item $k)}}
@@ -792,7 +792,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
 <template class="{{.Field}}-tpl">
   <tr>
         {{range $key, $item := .TableFields }}
-            <td>
+            <td style="width:{{$item.Width}}px;">
                 <div class="form-group" style="margin-bottom: 0px;">
                   <div class="col-sm-12">
                     {{template "form_components" $item}}
