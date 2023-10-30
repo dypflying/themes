@@ -2741,6 +2741,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" type="image/x-icon" href="resource/icons/logo_shortcut.png" />
         <title>{{.Title}}</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -2878,8 +2879,13 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                     <a target="_blank" href='{{$item.Url}}'>
                                 {{else}}
                                     <a href='{{$UrlPrefix}}{{$item.Url}}'>
-                                {{end}}                            
-                                    <i class="fa {{$item.Icon}}"></i> {{$item.Name}}
+                                {{end}} 
+                                {{if gt $item.Icon "e"}}                           
+                                    <i class="fa {{$item.Icon}}"></i> 
+                                {{else}}
+                                    <i style="display:inline-block;width:20px;height:14px;background-image:url(resource/icons/{{$item.Icon}}.svg);"></i>
+                                {{end}} 
+                                    {{$item.Name}}
                                 </a>
                             </li>
                             {{else}}
@@ -2900,7 +2906,12 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                                                 {{else}}
                                                     <a href='{{$UrlPrefix}}{{$subItem.Url}}'>
                                                 {{end}}                                             
-                                                    <i class="fa {{$subItem.Icon}}"></i> {{$subItem.Name}}
+                                                {{if gt $item.Icon "e"}}                           
+                                                    <i class="fa {{$subItem.Icon}}"></i> 
+                                                {{else}}
+                                                    <i style="display:inline-block;width:20px;height:14px;background-image:url(resource/icons/{{$subItem.Icon}}.svg);"></i>
+                                                {{end}} 
+                                                    {{$subItem.Name}}
                                                 </a>
                                             </li>
                                         {{end}}
