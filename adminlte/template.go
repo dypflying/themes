@@ -2734,7 +2734,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
        <!-- <div class="pull-right hidden-xs">
             <b>Theme</b> {{.System.Theme}}&nbsp;&nbsp;
         </div> -->
-        <strong>Powered by <a href="https://hyperstack.io/">HyperStack</a>.</strong>
+        <strong>Powered by <a href="https://chimestack.io/">ChimeStack</a>.</strong>
         {{.FooterInfo}}
     </footer>
 {{end}}`, "head": `{{define "head"}}
