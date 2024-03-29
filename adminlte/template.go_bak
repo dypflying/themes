@@ -2760,9 +2760,9 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
         <!-- Logo -->
         <a href="{{.UrlPrefix}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>Chime</b>Stack</span>
+            <span class="logo-mini">{{.MiniLogo}}</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Chime</b>Stack</span>
+            <span class="logo-lg">{{.Logo}}</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -2836,15 +2836,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
 
     </body>
     {{if not .Iframe}}
-        <script>
-            g_timer = null;
-            g_vm_id = "";
-            g_vm_tab = 0;
-            g_volume_id = "";
-            g_volume_tab = 0;
-            g_nic_id = "";
-            g_nic_tab = 0;
-        </script> 
+        {{.CustomFootHtml}} 
     {{end}}
     </html>
 
