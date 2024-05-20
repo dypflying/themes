@@ -2837,7 +2837,10 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     </body>
     {{if not .Iframe}}
         <script>
-            g_timer = null;
+            g_vm_timer = null;
+            g_host_timer = null;
+            g_image_timer = null;
+            g_volume_timer = null;
             g_vm_id = "";
             g_vm_tab = 0;
             g_volume_id = "";
