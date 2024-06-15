@@ -1645,7 +1645,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                     {{end}}
                 {{end}}
                 {{if eq .NoAction false}}
-                    <th style="text-align: center;right:0;width:80px;">{{lang "operation"}}</th>
+                    <th style="text-align: center;right:0;width:90px;">{{lang "operation"}}</th>
                 {{end}}
             </tr>
         {{end}}
