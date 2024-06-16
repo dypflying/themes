@@ -2847,6 +2847,8 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
             g_volume_tab = 0;
             g_nic_id = "";
             g_nic_tab = 0;
+            g_host_id = "";
+            g_host_tab = 0;
         </script> 
     {{end}}
     </html>
