@@ -1645,7 +1645,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
                     {{end}}
                 {{end}}
                 {{if eq .NoAction false}}
-                    <th style="text-align: center;right:0;width:90px;">{{lang "operation"}}</th>
+                    <th style="text-align: center;right:0;width:80px;">{{lang "operation"}}</th>
                 {{end}}
             </tr>
         {{end}}
@@ -2729,7 +2729,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
 {{end}}`, "footer": `{{define "footer"}}
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> {{.System.AppVersion}}
+            <b>Version</b> 0.0.1
         </div>
        <!-- <div class="pull-right hidden-xs">
             <b>Theme</b> {{.System.Theme}}&nbsp;&nbsp;
@@ -2741,7 +2741,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="shortcut icon" type="image/x-icon" href="/resource/icons/logo_shortcut.png" />
+        <link rel="shortcut icon" type="image/x-icon" href="resource/icons/logo_shortcut.png" />
         <title>{{.Title}}</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -2760,9 +2760,9 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
         <!-- Logo -->
         <a href="{{.UrlPrefix}}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>Chime</b>Stack</span>
+            <span class="logo-mini">{{.MiniLogo}}</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Chime</b>Stack</span>
+            <span class="logo-lg">{{.Logo}}</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top">
@@ -2836,23 +2836,7 @@ var TemplateList = map[string]string{"403": `<div class="missing-content">
 
     </body>
     {{if not .Iframe}}
-        <script>
-            g_vm_timer = null;
-            g_host_timer = null;
-            g_image_timer = null;
-            g_volume_timer = null;
-            g_vm_id = "";
-            g_vm_tab = 0;
-            g_volume_id = "";
-            g_volume_tab = 0;
-            g_nic_id = "";
-            g_nic_tab = 0;
-            g_host_id = "";
-            g_host_tab = 0;
-            g_sg_id = "";
-            g_sg_tab = 0;
-            g_sg_timer = null;
-        </script> 
+        {{.CustomFootHtml}} 
     {{end}}
     </html>
 
